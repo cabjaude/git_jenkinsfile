@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'hostname'
+                sh "hostname"
             }
         }
     }
