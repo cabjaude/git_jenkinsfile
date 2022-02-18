@@ -40,7 +40,8 @@ spec:
     stages {
         stage('Main') {
             steps {
-                sh 'hostname'
+                sh '$teste1'
+                sh 'echo $teste2'
             }
         }
     }
