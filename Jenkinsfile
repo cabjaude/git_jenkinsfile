@@ -19,7 +19,7 @@ metadata:
 spec:
   containers:
   - name: shell
-    image: ubuntu
+    image: ceregousa/ubuntu-git
     resources:
       limits:
         memory: "2Gi"
