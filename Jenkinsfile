@@ -22,9 +22,9 @@ spec:
     image: ceregousa/ubuntu-git
     resources:
       limits:
-        memory: "1Gi"
-      requests:
         memory: "4Gi"
+      requests:
+        memory: "1Gi"
     command:
     - sleep
     args:
