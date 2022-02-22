@@ -41,8 +41,7 @@ spec:
         stage('Main') {
             steps {
                 sh 'git clone https://github.com/cabjaude/teste-ping.git'
-                sh 'cd teste-ping' 
-                sh './script-teste.sh'
+                sh 'cd teste-ping ./script-teste.sh'
             }
         }
     }
