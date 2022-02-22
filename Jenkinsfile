@@ -18,7 +18,7 @@ metadata:
   namespace: jenkins
 spec:
   containers:
-  - name: shell
+  - name: git
     image: ceregousa/ubuntu-git
     resources:
       limits:
@@ -34,13 +34,13 @@ spec:
             // container('shell') {
             //     sh 'hostname'
             // }
-            defaultContainer 'shell'
+            defaultContainer 'git'
         }
     }
     stages {
         stage('Main') {
             steps {
-                sh 'hostname'
+                sh 'git version'
             }
         }
     }
