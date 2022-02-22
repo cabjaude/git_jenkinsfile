@@ -41,7 +41,7 @@ spec:
         stage('Main') {
             steps {
                 sh '$teste1'
-                sh 'echo $teste2'
+                sh '$teste2'
             }
         }
     }
