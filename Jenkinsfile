@@ -7,7 +7,7 @@ node {
   remote.allowAnyHosts = true
   stage('Remote SSH') {
     sshCommand remote: remote, command: "git clone https://github.com/cabjaude/teste-ping.git"
-    sshCommand remote: remote, command: "./script-teste.sh"
+    sshCommand remote: remote, command: "cd teste-ping ./script-teste.sh"
     
   }
 }
