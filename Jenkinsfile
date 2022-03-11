@@ -6,7 +6,7 @@ node {
   remote.password = 'vagrant'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    writeFile file: 'scriptping.sh', text: 'ls -lrt'
-    sshScript remote: remote, script: "scriptping.sh"
+    sshGet remote: remote, from: 'scriptping.sh', into: 'scriptping.sh', override: true
+    
   }
 }
