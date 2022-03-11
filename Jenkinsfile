@@ -6,8 +6,8 @@ node {
   remote.password = 'vagrant'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    writeFile file: 'abc.sh', text: 'ls -lrt'
-    sshScript remote: remote, script: "abc.sh"
+    sshCommand remote: remote, command: "ls -lrt"
+    sshCommand remote: remote, command: "for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done"
     
   }
 }
