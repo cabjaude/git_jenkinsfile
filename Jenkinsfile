@@ -1,48 +1,12 @@
-// Uses Declarative syntax to run commands inside a container.
-pipeline {
-    agent {
-        kubernetes {
-            // Rather than inline YAML, in a multibranch Pipeline you could use: yamlFile 'jenkins-pod.yaml'
-            // Or, to avoid YAML:
-            // containerTemplate {
-            //     name 'shell'
-            //     image 'ubuntu'
-            //     command 'sleep'
-            //     args 'infinity'
-            // }
-            yaml '''
-apiVersion: v1
-kind: Pod
-metadata:
-  name: teste1
-  namespace: jenkins
-spec:
-  containers:
-  - name: git
-    image: ceregousa/ubuntu-git
-    resources:
-      limits:
-        memory: "2Gi"
-      requests:
-        memory: "2Gi"
-    command:
-    - sleep
-    args:
-    - infinity
-'''
-            // Can also wrap individual steps:
-            // container('git') {
-            //     sh 'git'
-            // }
-            defaultContainer 'git'
-        }
-    }
-    stages {
-        stage('Main') {
-            steps {
-                sh 'git clone https://github.com/cabjaude/teste-ping.git'
-                sh 'cd teste-ping ./script-teste.sh'
-            }
-        }
-    }
+node {
+  def remote = [:]
+  remote.name = 'test'
+  remote.host = '192.168.1.70'
+  remote.user = 'vagrant'
+  remote.password = 'vagrant'
+  remote.allowAnyHosts = true
+  stage('Remote SSH') {
+    writeFile file: 'scriptping.sh', text: 'ls -lrt'
+    sshScript remote: remote, script: "scriptping.sh"
+  }
 }
