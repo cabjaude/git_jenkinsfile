@@ -6,7 +6,7 @@ node {
   remote.password = '!cl@udi0!'
   remote.allowAnyHosts = true  
   stage('locate path')
-    sshCommand remote: remote, command: "sshPut remote: remote, from: 'cd /root/teste-ping', into: '.'"
+    sshCommand remote: remote, command: "sshPut remote: remote, from: 'script-teste.sh', into: '.'"
   stage('script shell')     
     sshScript remote: remote, script: "script-teste.sh"
   }
