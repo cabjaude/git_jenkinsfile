@@ -8,6 +8,6 @@ node {
   stage('Remote SSH') {
     sshCommand remote: remote, command: "cd /home/vagrant/teste-ping" 
   stage('script shell')
-    sshCommand remote: remote, command: "./script-teste.sh"
+    ssshScript remote: remote, script: "script-teste.sh"
   }
 }
