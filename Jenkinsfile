@@ -8,6 +8,6 @@ node {
   stage('Remote SSH') {
     sshCommand remote: remote, command: "ls -lh"  
   stage('script shell')     
-    sshCommand remote: remote, command: "./script-teste.sh"
+    sshCommand remote: remote, command: "cd /root/ ./script-teste.sh"
   }
 }
