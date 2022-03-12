@@ -6,7 +6,7 @@ node {
   remote.password = 'vagrant'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    sshCommand remote: remote, command: "cd /home/vagrant/teste-ping/" 
+    sshCommand remote: remote, command: "git clone https://github.com/cabjaude/teste-ping.git" 
   stage('script shell')     
     sshCommand remote: remote, command: "./script-teste.sh"
   }
