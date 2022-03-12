@@ -6,10 +6,10 @@ node {
   remote.password = '!cl@udi0!'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    sshCommand remote: remote, command: "ping -c 5 8.8.8.8" 
+    sshCommand remote: remote, command: "https://github.com/cabjaude/teste-ping.git" 
   stage('acesso a pasta')     
-    sshCommand remote: remote, command: "cd /root/teste-ping/"
+    sshCommand remote: remote, command: "cp /root/teste-ping/ /root"
   stage('script shell')     
-    sshCommand remote: remote, command: "touch teste1"
+    sshCommand remote: remote, command: "./script-teste.sh"
   }
 }
