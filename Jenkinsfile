@@ -6,7 +6,7 @@ node {
   remote.password = '!cl@udi0!'
   remote.allowAnyHosts = true
   stage('Remote SSH') {
-    sshCommand remote: remote, command: "https://github.com/cabjaude/teste-ping.git" 
+    sshCommand remote: remote, command: "git clone https://github.com/cabjaude/teste-ping.git" 
   stage('acesso a pasta')     
     sshCommand remote: remote, command: "cp /root/teste-ping/script-teste.sh /root"
   stage('script shell')     
