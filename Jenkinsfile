@@ -5,7 +5,7 @@ node {
   remote.user = 'root'
   remote.password = '!cl@udi0!'
   remote.allowAnyHosts = true  
-  stage('locate path')
+  stage('Remote SSH')
     sshCommand remote: remote, command: "ls -lh"
   stage('script shell')     
     sshCommand remote: remote, command: "cat /root/script-teste.sh"
