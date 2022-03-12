@@ -7,8 +7,7 @@ node {
   remote.allowAnyHosts = true
   stage('Remote SSH') {
     sshCommand remote: remote, command: "cd /home/vagrant/teste-ping" 
-  stage('script shell')
-     steps {
-       sh 'cd teste-ping ./script-teste.sh'
+  stage('script shell')     
+       sh './script-teste.sh'
   }
 }
