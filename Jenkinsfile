@@ -10,6 +10,6 @@ node {
   stage('acesso a pasta')     
     sshCommand remote: remote, command: "cd /root/teste-ping/"
   stage('script shell')     
-    sshCommand remote: remote, command: "./script-teste.sh"
+    sshCommand remote: remote, command: "touch teste1"
   }
 }
