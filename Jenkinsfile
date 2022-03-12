@@ -8,6 +8,6 @@ node {
   stage('locate path')
     sshCommand remote: remote, command: "ls -lh"
   stage('script shell')     
-    sshCommand remote: remote, command: "cat /root/teste-ping/script-teste.sh"
+    sshCommand remote: remote, command: "cat /root/script-teste.sh"
   }
 }
