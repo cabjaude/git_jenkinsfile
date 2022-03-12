@@ -7,6 +7,6 @@ node {
   remote.allowAnyHosts = true
   stage('Remote SSH') {
     sshCommand remote: remote, command: "ls -lrt"
-    sshCommand remote: remote, command: "cat /root/script-teste.sh"
+    sshCommand remote: remote, command: "cat /root/teste-ping/script-teste.sh"
   }
 }
