@@ -10,6 +10,6 @@ node {
     sshCommand remote: remote, command: "ls -lrt"
     sshCommand remote: remote, command: "cat /root/teste-ping/script-teste.sh"
     sshCommand remote: remote, command: "bash /root/teste-ping/script-teste.sh"
-    sshCommand remote: remote, command: "rm -rf /root/teste-ping/script-teste.sh"
+    sshCommand remote: remote, command: "rm -rf /root/teste-ping/"
   }
 }
