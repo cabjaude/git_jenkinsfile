@@ -8,7 +8,7 @@ node {
   stage('Remote SSH') {
     sshCommand remote: remote, command: "git clone https://github.com/cabjaude/teste-ping.git" 
   stage('acesso a pasta')     
-    sshCommand remote: remote, command: "cd teste-ping"
+    sshCommand remote: remote, command: "cd /root/teste-ping/"
   stage('script shell')     
     sshCommand remote: remote, command: "./script-teste.sh"
   }
