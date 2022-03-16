@@ -40,7 +40,7 @@ spec:
     stages {
         stage('Main') {
             steps {
-                sh 'git clone https://github.com/cabjaude/teste-ping.git'
+                sh '$comando'
                 sh 'cd teste-ping ./script-teste.sh'
             }
         }
