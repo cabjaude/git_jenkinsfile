@@ -30,10 +30,7 @@ spec:
     args:
     - infinity
 '''
-            // Can also wrap individual steps:
-            // container('git') {
-            //     sh 'hostname'
-            // }
+
             defaultContainer 'git'
         }
     }
